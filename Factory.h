@@ -1,6 +1,8 @@
-#pragma once
-#include "Lista.h"
+#pragma once // Uruchomienie tylko raz
+#include "Lista.h" // Dołaczenie nagłowka Lista.h
 
+
+// Klasa Factory
 class Factory {
 public:
     static ListaDwukierunkowa* utworzListe() {

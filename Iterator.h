@@ -1,8 +1,8 @@
-#pragma once
-#include "Lista.h"
-#include <iostream>
-using namespace std;
+#pragma once // Uruchomienie tylko raz
+#include "Lista.h" // Dołaczenie nagłowka Lista.h
 
+
+// klasa Iterator
 class Iterator {
 private:
     ListaDwukierunkowa::Wezel* aktualny;

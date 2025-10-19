@@ -1,5 +1,5 @@
-#include "Lista.h"
-#include "Iterator.h"
+#include "Lista.h" // Dołaczenie nagłowka Lista.h
+#include "Iterator.h" // Dołaczenie nagłowka Interator.h
 
 ListaDwukierunkowa::ListaDwukierunkowa() : pierwszy(nullptr), ostatni(nullptr) {} // konstruktor
 
@@ -68,6 +68,7 @@ void ListaDwukierunkowa::dodajIndex(int indeks, int wartosc) {
     aktualny->nastepny = nowy;
 }
 
-Iterator ListaDwukierunkowa::poczatek() {
+// Pobranie iteratora na początek listy
+Iterator ListaDwukierunkowa::poczatek() { 
     return Iterator(pierwszy);
 }

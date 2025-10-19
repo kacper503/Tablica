@@ -6,9 +6,6 @@ class Iterator; // deklaracja
 
 // Lista Dwukierunkowa
 class ListaDwukierunkowa {
-private:
-    Wezel* pierwszy;
-    Wezel* ostatni;
 public:
     struct Wezel {
         int dane;
@@ -27,4 +24,8 @@ public:
     Iterator poczatek();
 
     friend class Iterator; // deklaracja przyjaźni
-}
+
+private:
+    Wezel* pierwszy;
+    Wezel* ostatni;
+};
