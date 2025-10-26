@@ -143,3 +143,26 @@ void ListaDwukierunkowa::usunZIndex(int indeks) {
 
     delete aktualny;
 }
+
+
+// Zwraca iterator na koniec listy
+Iterator ListaDwukierunkowa::koniec() { 
+    return Iterator(ostatni);
+}
+
+
+// Wyświetla listę w odwrotnej kolejności
+void ListaDwukierunkowa::wyswietlOdwr() {
+    Iterator it = koniec(); // Ustawia iterator na ostatni element
+    while (it.czyJestNastepny()) {
+        cout << it.pobierzDane() << " ";
+        it.poprzedni(); // Przesuwa iterator do tyłu
+    }
+    cout << endl;
+}
+
+
+// Zwraca iterator na początek listy
+Iterator ListaDwukierunkowa::poczatek() { 
+    return Iterator(pierwszy);
+}

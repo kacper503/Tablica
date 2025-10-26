@@ -12,4 +12,5 @@ public:
     bool czyJestNastepny() const { return aktualny != nullptr; }
     int pobierzDane() const { return aktualny->dane; }
     void nastepny() { if (aktualny) aktualny = aktualny->nastepny; }
+    void poprzedni() { if (aktualny) aktualny = aktualny->poprzedni; }
 };

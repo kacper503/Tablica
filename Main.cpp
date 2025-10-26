@@ -23,6 +23,31 @@ int main() {
     }
     cout << endl;
 
+    cout << "Lista w odwrotnej kolejnosci: ";
+    lista->wyswietlOdwr();
+    cout << endl;
+
+    cout << "testowanie nastepny i poprzedni:" << endl;
+    it = lista->poczatek();
+    it.nastepny();
+
+    Iterator temp_next = it; // tworzenie tymczasowego iteratora
+    temp_next.nastepny(); // przesuwanie do następnego elementu
+    if (temp_next.czyJestNastepny()) {
+        cout << "Nastepny element po " << it.pobierzDane() << " to: " << temp_next.pobierzDane() << endl; // Powinno być 14
+    } else {
+        cout << "Element " << it.pobierzDane() << " jest ostatni." << endl;
+    }
+
+    Iterator temp_prev = it; // tworzenie tymczasowego iteratora
+    temp_prev.poprzedni(); // przesuwanie do poprzedniego elementu
+    if (temp_prev.czyJestNastepny()) {
+        cout << "Poprzedni element przed " << it.pobierzDane() << " to: " << temp_prev.pobierzDane() << endl; // Powinno być 74
+    } else {
+        cout << "Element " << it.pobierzDane() << " jest pierwszy." << endl;
+    }
+    cout << endl;
+
     lista->usunZPoczatku(); // Usuwa z pierwszego miejsca
 
     lista->usunZIndex(1); // Usuwa z indeksu 1
