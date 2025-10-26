@@ -68,6 +68,82 @@ void ListaDwukierunkowa::dodajIndex(int indeks, int wartosc) {
     aktualny->nastepny = nowy;
 }
 
+
+// Usuwanie z końca
+void ListaDwukierunkowa::usunZKonca() {
+    if (!ostatni) {
+        return; // Lista pusta
+    }
+    Wezel* doUsuniecia = ostatni;
+    if (pierwszy == ostatni) { // Lista ma jeden element
+        pierwszy = ostatni = nullptr;
+    } else {
+        ostatni = ostatni->poprzedni;
+        if (ostatni) {
+            ostatni->nastepny = nullptr;
+        } else {
+            pierwszy = nullptr; 
+        }
+    }
+    delete doUsuniecia;
+}
+
+
+// Usuwanie z początku
+void ListaDwukierunkowa::usunZPoczatku() {
+    if (!pierwszy) {
+        return; // Lista pusta
+    }
+    Wezel* doUsuniecia = pierwszy;
+    if (pierwszy == ostatni) { // Lista ma jeden element
+        pierwszy = ostatni = nullptr;
+    } else {
+        pierwszy = pierwszy->nastepny;
+        if (pierwszy) {
+            pierwszy->poprzedni = nullptr;
+        } else {
+            ostatni = nullptr; 
+        }
+    }
+    delete doUsuniecia;
+}
+
+
+// Usuwanie z miejsca indeksu
+void ListaDwukierunkowa::usunZIndex(int indeks) {
+    if (!pierwszy) {
+        return; // Lista pusta
+    }
+
+    if (indeks <= 0) {
+        usunZPoczatku();
+        return;
+    }
+
+    Wezel* aktualny = pierwszy;
+    for (int i = 0; i < indeks && aktualny; ++i) {
+        aktualny = aktualny->nastepny;
+    }
+
+    if (!aktualny) {
+        return; 
+    }
+
+    if (aktualny->poprzedni) {
+        aktualny->poprzedni->nastepny = aktualny->nastepny;
+    } else {
+        pierwszy = aktualny->nastepny;
+    }
+
+    if (aktualny->nastepny) {
+        aktualny->nastepny->poprzedni = aktualny->poprzedni;
+    } else {
+        ostatni = aktualny->poprzedni;
+    }
+
+    delete aktualny;
+}
+
 // Pobranie iteratora na początek listy
 Iterator ListaDwukierunkowa::poczatek() { 
     return Iterator(pierwszy);
