@@ -15,13 +15,13 @@ int main() {
     Iterator it = lista->poczatek(); // pobranie iteratora na początek listy
 
     // Wypisywanie listy
+    cout << "lista standardowa:" << endl;
+
     while (it.czyJestNastepny()) {
         cout << it.pobierzDane() << " ";
         it.nastepny();
     }
     cout << endl;
-
-    cout << "po usuwaniu:" << endl;
 
     lista->usunZPoczatku(); // Usuwa z pierwszego miejsca
 

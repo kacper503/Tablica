@@ -26,6 +26,8 @@ public:
     void usunZIndex(int indeks); // Usuwanie z miejsca indeksu
 
     Iterator poczatek();
+    Iterator koniec();
+    void wyswietlOdwr();
 
     friend class Iterator; // deklaracja przyjaźni
 

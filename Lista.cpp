@@ -143,8 +143,3 @@ void ListaDwukierunkowa::usunZIndex(int indeks) {
 
     delete aktualny;
 }
-
-// Pobranie iteratora na początek listy
-Iterator ListaDwukierunkowa::poczatek() { 
-    return Iterator(pierwszy);
-}
